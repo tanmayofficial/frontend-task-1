@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Frontend Task</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    // React component
+    function Table() {
+      const handleCellInput = (event, rowIndex, colIndex) => {
+        const header = event.target.parentNode.parentNode.rows[0].cells[colIndex].textContent;
+        const editedValue = event.target.textContent.trim();
+
+        console.log(`Header: ${header}, Row Index: ${rowIndex}, Column Index: ${colIndex}, Value: ${editedValue}`);
+
+        const data = {
+          header: header,
+          rowIndex: rowIndex,
+          colIndex: colIndex,
+          value: editedValue
+        };
+
+        console.log("data: ", data);
+
+        // the code below for updating the data
+        // const apiUrl = 'https://example.com/api/update';
+        // fetch(apiUrl, {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json'
+        //   },
+        //   body: JSON.stringify(data)
+        // })
+        // .then(response => response.json())
+        // .then(responseData => {
+        //   console.log('API Response:', responseData);
+        // })
+        // .catch(error => {
+        //   console.error('Error:', error);
+        // });
+      };
+
+      return (
+        <div className="container">
+          <h2 className="table-header-top">Table</h2>
+
+          <table className="">
+            <thead>
+              <tr className="table-row">
+                <th className="table-head-field">MONTH 1</th>
+                <th className="table-head-empty"></th>
+                <th className="table-head-empty"></th>
+                <th className="table-head-empty"></th>
+                <th className="table-head-empty"></th>
+                <th className="table-head-empty"></th>
+                <th className="table-head-empty"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="table-data-left">Onboarding Call</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 0, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 0, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 0, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 0, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 0, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 0, 5)}></td>
+              </tr>
+              <tr>
+                <td className="table-data-left">Google Search Console Access</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 1, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 1, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 1, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 1, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 1, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 1, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Google Analytics Access</td>
+                <td contenteditable="true" onInput={(event) => handleCellInput(event, 2, 0)}></td>
+                <td contenteditable="true" onInput={(event) => handleCellInput(event, 2, 1)}></td>
+                <td contenteditable="true" onInput={(event) => handleCellInput(event, 2, 2)}></td>
+                <td contenteditable="true" onInput={(event) => handleCellInput(event, 2, 3)}></td>
+                <td contenteditable="true" onInput={(event) => handleCellInput(event, 2, 4)}></td>
+                <td contenteditable="true" onInput={(event) => handleCellInput(event, 2, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Website Access</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 3, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 3, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 3, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 3, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 3, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 3, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Technical Audit</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 4, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 4, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 4, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 4, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 4, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 4, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Anchor Text and Semantic Analysis</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 5, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 5, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 5, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 5, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 5, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 5, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Competitor Analysis</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 6, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 6, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 6, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 6, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 6, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 6, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Anchor Text / URL Mapping</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 7, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 7, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 7, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 7, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 7, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 7, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Google Data Studio Report + Local Reporting Suite</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 8, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 8, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 8, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 8, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 8, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 8, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Site Level Optimization</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 9, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 9, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 9, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 9, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 9, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 9, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">On Page Optimization</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 10, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 10, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 10, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 10, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 10, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 10, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Content Creation</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 11, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 11, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 11, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 11, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 11, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 11, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Content Publishing</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 12, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 12, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 12, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 12, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 12, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 12, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Premium Press Release</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 13, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 13, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 13, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 13, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 13, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 13, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Authority Niche Placements</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 14, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 14, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 14, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 14, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 14, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 14, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Review Management</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 15, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 15, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 15, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 15, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 15, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 15, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Index Links</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 16, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 16, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 16, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 16, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 16, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 16, 5)}></td>
+              </tr>
+              <tr>
+                <td class="table-data-left">Video Recap</td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 17, 0)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 17, 1)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 17, 2)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 17, 3)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 17, 4)}></td>
+                <td contentEditable="true" onInput={(event) => handleCellInput(event, 17, 5)}></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+
+    // Mount the React component to the root element
+    ReactDOM.render(<Table />, document.getElementById('root'));
+  </script>
+</body>
+
+</html>
